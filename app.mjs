@@ -4,8 +4,8 @@ import cors from 'cors';
 
 const app = express();
 const niftyMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=nifty&expiryDate=2024-09-26"
-const bankMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=banknifty&expiryDate=2024-09-25"
-const finMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=finnifty&expiryDate=2024-09-24"
+const bankMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=banknifty&expiryDate=2024-10-30"
+const finMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=finnifty&expiryDate=2024-10-29"
 
 const niftyAPI = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=nifty&expiryDate=";
 const finAPI = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=finnifty&expiryDate=";
