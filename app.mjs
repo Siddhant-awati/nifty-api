@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const niftyMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=nifty&expiryDate=2024-09-26"
+const niftyMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=nifty&expiryDate=2024-10-31"
 const bankMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=banknifty&expiryDate=2024-10-30"
 const finMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=finnifty&expiryDate=2024-10-29"
 
@@ -11,6 +11,15 @@ const niftyAPI = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain
 const finAPI = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=finnifty&expiryDate=";
 const bankAPI = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=banknifty&expiryDate=";
 const indexAPI = "https://webapi.niftytrader.in/webapi/symbol/stock-index-data";
+
+const niftyPcrWeekly = 'https://services.niftytrader.in/webapi/option/oi-pcr-data?type=niftypcr&expiry=';
+const bankPcrWeekly = 'https://services.niftytrader.in/webapi/option/oi-pcr-data?type=bankniftypcr&expiry=';
+const finPcrWeekly = 'https://services.niftytrader.in/webapi/option/oi-pcr-data?type=finniftypcr&expiry=';
+const token = 'bmlmdHlhcGl1c2VyOm5pZnR5YXBpdXNlckAyMTEwIw==';
+const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Basic ${token}`
+}
 
 app.use(cors()); // Enable CORS for all requests
 
@@ -83,6 +92,36 @@ app.get('/api/fin-monthly', async (req, res) => {
         res.status(500).json({ error: 'Error fetching stock data' });
     }
 });
+
+app.get('/api/nifty-pcr', async (req, res) => {
+    try {
+        const response = await fetch(niftyPcrWeekly, { headers: headers });
+        const data = await response.json();
+        res.json(data.result.oiDatas);
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching stock data' });
+    }
+});
+
+app.get('/api/bank-pcr', async (req, res) => {
+    try {
+        const response = await fetch(bankPcrWeekly, { headers: headers });
+        const data = await response.json();
+        res.json(data.result.oiDatas);
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching stock data' });
+    }
+});
+app.get('/api/fin-pcr', async (req, res) => {
+    try {
+        const response = await fetch(finPcrWeekly, { headers: headers });
+        const data = await response.json();
+        res.json(data.result.oiDatas);
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching stock data' });
+    }
+});
+
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
