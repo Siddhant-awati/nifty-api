@@ -3,13 +3,13 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const niftyMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=nifty&expiryDate=2024-12-26"
-const bankMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate="
-const finMonthly = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=finnifty&expiryDate="
+const niftyMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=2025-01-30&atmBelow=15&atmAbove=15"
+const bankMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15"
+const finMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15"
 
-const niftyAPI = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=nifty&expiryDate=";
-const finAPI = "https://webapi.niftytrader.in/webapi/option/fatch-option-chain?symbol=finnifty&expiryDate=";
-const bankAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=";
+const niftyAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15";
+const finAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15";
+const bankAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15";
 const indexAPI = "https://webapi.niftytrader.in/webapi/symbol/stock-index-data";
 
 const niftyPcrWeekly = 'https://services.niftytrader.in/webapi/option/oi-pcr-data?type=niftypcr&expiry=';
@@ -18,7 +18,7 @@ const finPcrWeekly = 'https://services.niftytrader.in/webapi/option/oi-pcr-data?
 const token = 'bmlmdHlhcGl1c2VyOm5pZnR5YXBpdXNlckAyMTEwIw==';
 const headers = {
     'Content-Type': 'application/json',
-    'Authorization': `Basic ${token}`
+    'Authorization': `Basic ${token}`   
 }
 
 app.use(cors()); // Enable CORS for all requests
