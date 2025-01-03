@@ -3,13 +3,13 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const niftyMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=2025-01-30&atmBelow=15&atmAbove=15"
-const bankMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15"
-const finMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15"
+const niftyMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=2025-01-30&atmBelow=20&atmAbove=20"
+const bankMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20"
+const finMonthly = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20"
 
-const niftyAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15";
-const finAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15";
-const bankAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=15&atmAbove=15";
+const niftyAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20";
+const finAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20";
+const bankAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20";
 const indexAPI = "https://webapi.niftytrader.in/webapi/symbol/stock-index-data";
 
 const niftyPcrWeekly = 'https://services.niftytrader.in/webapi/option/oi-pcr-data?type=niftypcr&expiry=';
