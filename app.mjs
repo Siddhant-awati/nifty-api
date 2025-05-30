@@ -16,6 +16,7 @@ const finAPI =
   "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
 const bankAPI =
   "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
+const sensexAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=sensex&exchange=BSE&expiryDate=&atmBelow=20&atmAbove=20"
 const indexAPI = "https://webapi.niftytrader.in/webapi/symbol/stock-index-data";
 
 const niftyPcrWeekly =
@@ -44,6 +45,16 @@ app.get("/api/index-all", async (req, res) => {
 app.get("/api/nifty-weekly", async (req, res) => {
   try {
     const response = await fetch(niftyAPI);
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching stock data" });
+  }
+});
+
+app.get("/api/sensex-weekly", async (req, res) => {
+  try {
+    const response = await fetch(sensexAPI);
     const data = await response.json();
     res.json(data);
   } catch (error) {
