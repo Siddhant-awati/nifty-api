@@ -4,7 +4,7 @@ import cors from "cors";
 
 const app = express();
 const niftyMonthly =
-  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=2025-05-29&atmBelow=14&atmAbove=12";
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=2025-06-26&atmBelow=14&atmAbove=12";
 const bankMonthly =
   "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
 const finMonthly =
