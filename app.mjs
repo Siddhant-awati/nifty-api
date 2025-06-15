@@ -4,19 +4,20 @@ import cors from "cors";
 
 const app = express();
 const niftyMonthly =
-  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=2025-06-26&atmBelow=14&atmAbove=12";
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=2025-06-26&atmBelow=10&atmAbove=8";
 const bankMonthly =
-  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=10&atmAbove=8";
 const finMonthly =
-  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=10&atmAbove=8";
 
 const niftyAPI =
-  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=&atmBelow=10&atmAbove=8";
 const finAPI =
-  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=10&atmAbove=8";
 const bankAPI =
-  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=14&atmAbove=12";
-const sensexAPI = "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=sensex&exchange=BSE&expiryDate=&atmBelow=20&atmAbove=20"
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=10&atmAbove=8";
+const sensexAPI =
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=sensex&exchange=BSE&expiryDate=&atmBelow=10&atmAbove=10";
 const indexAPI = "https://webapi.niftytrader.in/webapi/symbol/stock-index-data";
 
 const niftyPcrWeekly =
