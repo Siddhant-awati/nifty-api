@@ -18,6 +18,16 @@ const bankAPI =
   "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=10&atmAbove=10";
 const sensexAPI =
   "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=sensex&exchange=BSE&expiryDate=&atmBelow=10&atmAbove=10";
+
+const niftyAPI20 =
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=nifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20";
+const finAPI20 =
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=finnifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20";
+const bankAPI20 =
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=banknifty&exchange=nse&expiryDate=&atmBelow=20&atmAbove=20";
+const sensexAPI20 =
+  "https://webapi.niftytrader.in/webapi/option/option-chain-data?symbol=sensex&exchange=BSE&expiryDate=&atmBelow=20&atmAbove=20";
+
 const indexAPI = "https://webapi.niftytrader.in/webapi/symbol/stock-index-data";
 
 const niftyPcrWeekly =
@@ -52,10 +62,28 @@ app.get("/api/nifty-weekly", async (req, res) => {
     res.status(500).json({ error: "Error fetching stock data" });
   }
 });
+app.get("/api/nifty-weekly-20", async (req, res) => {
+  try {
+    const response = await fetch(niftyAPI20);
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching stock data" });
+  }
+});
 
 app.get("/api/sensex-weekly", async (req, res) => {
   try {
     const response = await fetch(sensexAPI);
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching stock data" });
+  }
+});
+app.get("/api/sensex-weekly-20", async (req, res) => {
+  try {
+    const response = await fetch(sensexAPI20);
     const data = await response.json();
     res.json(data);
   } catch (error) {
@@ -83,6 +111,16 @@ app.get("/api/bank-weekly", async (req, res) => {
   }
 });
 
+app.get("/api/bank-weekly-20", async (req, res) => {
+  try {
+    const response = await fetch(bankAPI20);
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching stock data" });
+  }
+});
+
 app.get("/api/bank-monthly", async (req, res) => {
   try {
     const response = await fetch(bankMonthly);
@@ -96,6 +134,16 @@ app.get("/api/bank-monthly", async (req, res) => {
 app.get("/api/fin-weekly", async (req, res) => {
   try {
     const response = await fetch(finAPI);
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching stock data" });
+  }
+});
+
+app.get("/api/fin-weekly-20", async (req, res) => {
+  try {
+    const response = await fetch(finAPI20);
     const data = await response.json();
     res.json(data);
   } catch (error) {
